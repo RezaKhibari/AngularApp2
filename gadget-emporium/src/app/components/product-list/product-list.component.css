@@ -1,0 +1,77 @@
+/* Product Card Styling */
+.card {
+  border: 1px solid #ddd; /* Light gray border */
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px); /* Lift the card */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Slight shadow for hover effect */
+}
+
+.card-img-top {
+  height: 250px; /* Set a fixed height */
+  object-fit: cover; /* Make sure images fill the card but maintain aspect ratio */
+}
+
+.card-body {
+  padding: 20px; /* Add padding for text inside the card */
+}
+
+.card-title {
+  font-size: 1.25rem; /* Slightly larger title */
+  font-weight: bold;
+  color: #333;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #666; /* Muted text color */
+  line-height: 1.5;
+}
+
+.card-text.fw-bold {
+  color: #333; /* Dark text for the price */
+}
+
+.btn {
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darker blue for button hover */
+  color: white;
+}
+
+/* Styling for Category Filter Dropdown */
+select.form-select {
+  border-radius: 0.375rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #ddd;
+}
+
+select.form-select:focus {
+  border-color: #0056b3;
+  box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.25);
+}
+
+.container {
+  max-width: 1200px;
+}
+
+h2.text-center {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+@media (max-width: 767px) {
+  .row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .col-md-4, .col-sm-6 {
+    flex: 1 0 100%;
+  }
+}
