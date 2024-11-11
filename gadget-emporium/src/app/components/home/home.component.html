@@ -1,15 +1,35 @@
-<div class="container text-center">
-  <h1 class="my-4">Welcome to Gadget Emporium</h1>
-  <div class="row">
-    <div class="col-md-4" *ngFor="let product of featuredProducts">
-      <div class="card mb-4">
-        <img [src]="product.imageUrl" class="card-img-top" alt="{{ product.name }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text">{{ product.description }}</p>
-          <a [routerLink]="['/products', product.id]" class="btn btn-primary">View Details</a>
+<div class="container mt-4">
+  <!-- Hero Section -->
+  <section class="hero-section text-center text-light p-5 rounded mb-5">
+    <h1>Welcome to Gadget Emporium</h1>
+    <p>Discover the latest electronics at unbeatable prices!</p>
+    <a routerLink="/products" class="btn btn-primary btn-lg mt-3">Shop Now</a>
+  </section>
+
+  <!-- Featured Products -->
+  <section class="featured-products mb-5">
+    <h2 class="text-center text-primary mb-4">Featured Products</h2>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let product of featuredProducts">
+        <div class="card shadow">
+          <img [src]="product.imageUrl" class="card-img-top" alt="{{ product.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ product.name }}</h5>
+            <p class="card-text">${{ product.price.toFixed(2) }}</p>
+            <a [routerLink]="['/products', product.id]" class="btn btn-outline-primary btn-sm">View Product</a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
+  <!-- Categories -->
+  <section class="categories text-center mb-5">
+    <h2 class="text-primary mb-4">Shop by Category</h2>
+    <div class="d-flex justify-content-center flex-wrap">
+      <button *ngFor="let category of categories" (click)="selectCategory(category)"
+              class="btn btn-outline-secondary m-2">{{ category }}
+      </button>
+    </div>
+  </section>
 </div>

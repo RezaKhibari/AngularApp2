@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../models/product';
-import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'app-home',
@@ -8,15 +6,19 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  featuredProducts: Product[] = []; // Initialize as an empty array
+  featuredProducts = [
+    { id: 1, name: 'Smartphone XYZ', price: 699, imageUrl: 'assets/product1.jpg' },
+    { id: 2, name: 'Wireless Earbuds', price: 129, imageUrl: 'assets/product2.jpg' },
+    { id: 3, name: 'Smartwatch', price: 249, imageUrl: 'assets/product3.jpg' }
+  ];
 
-  constructor(private productService: ProductService) {}
+  categories = ['Phones', 'Laptops', 'Accessories', 'Wearables'];
 
-  ngOnInit(): void {
-    this.getFeaturedProducts();
-  }
+  constructor() { }
 
-  getFeaturedProducts(): void {
-    this.featuredProducts = this.productService.getProducts().slice(0, 3); // Assuming the first 3 products are featured
+  ngOnInit(): void { }
+
+  selectCategory(category: string) {
+    console.log(`Category selected: ${category}`);
   }
 }

@@ -1,0 +1,111 @@
+/* home.component.css */
+
+/* Hero Section */
+.hero-section {
+  background: url('/assets/hero-banner.jpg') center/cover no-repeat;
+  color: #ffffff;
+  padding: 5rem 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.hero-section h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+}
+
+.hero-section .btn {
+  padding: 0.8rem 1.5rem;
+  font-size: 1.1rem;
+  border-radius: 30px;
+}
+/* Featured Products */
+.featured-products {
+  margin-top: 3rem;
+}
+
+.featured-products h2 {
+  font-weight: bold;
+}
+
+.card {
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #555;
+}
+
+.btn-outline-primary {
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+}
+/* Categories Section */
+.categories h2 {
+  font-weight: bold;
+}
+
+.categories .btn {
+  font-size: 0.9rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.categories .btn:hover {
+  background-color: #007bff;
+  color: #ffffff;
+}
+/* Container and General Adjustments */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem;
+}
+
+@media (max-width: 768px) {
+  .hero-section h1 {
+    font-size: 2rem;
+  }
+
+  .card img {
+    height: 150px;
+  }
+}
+/* home.component.css */
+
+.btn-primary {
+  background-color: #0056b3; /* Custom blue color */
+  border-color: #0056b3;
+}
+
+.btn-primary:hover {
+  background-color: #004080; /* Darker blue on hover */
+  border-color: #004080;
+}

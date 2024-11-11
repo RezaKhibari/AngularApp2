@@ -1,6 +1,6 @@
 // product-list.component.ts
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../../models/product';
+import { Product } from '../../models/Product';
 import { ProductService } from '../../services/product.service';
 
 @Component({
