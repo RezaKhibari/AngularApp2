@@ -1,7 +1,7 @@
 // product-list.component.ts
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../models/Product';
-import { ProductService } from '../../services/product.service';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-product-list',
@@ -9,28 +9,20 @@ import { ProductService } from '../../services/product.service';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent implements OnInit {
-  products: Product[] = [];
-  filteredProducts: Product[] = [];
-  categories: string[] = [];
-  selectedCategory: string = 'All';
-
-  constructor(private productService: ProductService) {}
-
-  ngOnInit(): void {
-    this.products = this.productService.getProducts();
-    this.categories = Array.from(new Set(this.products.map(product => product.category))); // Unique categories
-    this.categories.unshift('All'); // Add 'All' option
-    this.filterProducts();
+  onCategoryChange(arg0: string) {
+  throw new Error('Method not implemented.');
   }
+    products: Product[] = [];
+    filteredProducts: Product[] = [];
+    categories: string[] = [];
+    selectedCategory: string = 'All';
 
-  filterProducts(): void {
-    this.filteredProducts = this.selectedCategory === 'All'
-      ? this.products
-      : this.products.filter(product => product.category === this.selectedCategory);
-  }
+    constructor(private cartService: CartService) { }
 
-  onCategoryChange(category: string): void {
-    this.selectedCategory = category;
-    this.filterProducts();
-  }
+    ngOnInit(): void { }
+
+    addToCart(product: any) {
+      this.cartService.addToCart(product);
+      alert(`${product.name} has been added to your cart!`);
+    }
 }

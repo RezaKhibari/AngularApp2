@@ -2,8 +2,8 @@
 
 /* Hero Section */
 .hero-section {
-  background: url('/assets/hero-banner.jpg') center/cover no-repeat;
-  color: #ffffff;
+  background: url('../../../../assets/hero-banner1.jpg') center/cover no-repeat;
+  color: hsl(57, 82%, 66%);
   padding: 5rem 2rem;
   border-radius: 8px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
@@ -42,7 +42,7 @@
 
 .card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 6px 20px rgba(194, 40, 40, 0.15);
 }
 
 .card img {
@@ -58,7 +58,7 @@
 
 .card-text {
   font-size: 1rem;
-  color: #555;
+  color: #792323;
 }
 
 .btn-outline-primary {
@@ -101,7 +101,7 @@
 /* home.component.css */
 
 .btn-primary {
-  background-color: #0056b3; /* Custom blue color */
+  background-color: #8a9db2; /* Custom blue color */
   border-color: #0056b3;
 }
 

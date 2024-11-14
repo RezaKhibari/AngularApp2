@@ -6,11 +6,22 @@
     <a routerLink="/products" class="btn btn-primary btn-lg mt-3">Shop Now</a>
   </section>
 
+  <!-- Categories Filter -->
+  <section class="categories text-center mb-5">
+    <h2 class="text-primary mb-4">Shop by Category</h2>
+    <div class="d-flex justify-content-center flex-wrap">
+      <button *ngFor="let category of categories" (click)="selectCategory(category)"
+              class="btn btn-outline-secondary m-2"
+              [class.active]="category === selectedCategory">{{ category }}
+      </button>
+    </div>
+  </section>
+
   <!-- Featured Products -->
   <section class="featured-products mb-5">
     <h2 class="text-center text-primary mb-4">Featured Products</h2>
     <div class="row">
-      <div class="col-md-4" *ngFor="let product of featuredProducts">
+      <div class="col-md-4" *ngFor="let product of paginatedProducts">
         <div class="card shadow">
           <img [src]="product.imageUrl" class="card-img-top" alt="{{ product.name }}">
           <div class="card-body">
@@ -23,13 +34,12 @@
     </div>
   </section>
 
-  <!-- Categories -->
-  <section class="categories text-center mb-5">
-    <h2 class="text-primary mb-4">Shop by Category</h2>
-    <div class="d-flex justify-content-center flex-wrap">
-      <button *ngFor="let category of categories" (click)="selectCategory(category)"
-              class="btn btn-outline-secondary m-2">{{ category }}
-      </button>
-    </div>
-  </section>
+  <!-- Pagination Controls -->
+  <div class="pagination-controls text-center mt-4">
+    <button (click)="goToPreviousPage()" class="btn btn-secondary mx-2"
+            [disabled]="currentPage === 1">Previous</button>
+    <span>Page {{ currentPage }} of {{ totalPages }}</span>
+    <button (click)="goToNextPage()" class="btn btn-secondary mx-2"
+            [disabled]="currentPage === totalPages">Next</button>
+  </div>
 </div>
